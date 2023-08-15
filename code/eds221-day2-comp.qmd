@@ -164,3 +164,13 @@ y = 6i
 class(y)
 # this is the other way that i shows up by default in R , kind of like how L sets numbers as integers but you could also have a variable called L
 ```
+
+-   note: when we redefine i in a later chunk, when rendering, this doesn't overwrite what happens in the first chunk -- like running everything from the top down, not as a whole.
+
+These are also mutable -- you can change what is stored in a vector!
+
+```{r}
+trees[3] <- "OAK"
+
+trees
+```
