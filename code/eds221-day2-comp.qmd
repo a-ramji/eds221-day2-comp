@@ -260,3 +260,61 @@ class(ttest_example)
 example:
 
 Mean size for trees in Site A is greater than the mean size in Site B (... my statistical summary, `r ttest_example$p.value` ).
+
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+## Data frames
+
+-   can have different data types, but vectors must be the same length
+
+```{r}
+fruit <- data.frame(type = c("apple", "banana", "peach"), 
+                    mass = c(130, 195, 150))
+class(fruit)
+
+fruit
+```
+
+-   indexing \[row, column\]
+
+```{r}
+
+fruit[3, 2]
+```
+
+-   pluck function from purrr package within tidyverse
+
+```{r}
+# looks in this data frame, this column, and this element
+purrr::pluck(fruit, "type", 2)
+```
+
+base R
+
+```{r}
+fruit$type[2]
+```
+
+starwars dataframe
+
+-   starships
+
+```{r}
+# gets the entire column
+# starwars$starships
+
+# gets first element from that column
+starwars$starships[1]
+
+# double brackets returns the actual values
+# gets a vector of the values in the first row
+starwars$starships[[1]]
+
+# gets the second value within that vector 
+starwars$starships[[1]][2]
+```
+
+```{r}
+# dataframe, column name, 1st element (a vector), 2nd element from that vector
+purrr::pluck(starwars, "starships", 1, 2)
+```
