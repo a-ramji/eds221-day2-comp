@@ -1,15 +1,96 @@
 ---
-title: "EDS221 Day 2 Computer Session"
+title: "EDS221 Day 2 Interactive Session"
 format: html
 editor: visual
 execute: 
   warning: false
 ---
 
-## Quarto
+## EDS 221 Day 2 Interactive Session(s)
 
 ```{r}
 library(tidyverse)
 library(here)
 library(janitor)
+```
+
+## Making & indexing data in R
+
+### Vectors
+
+Making Vectors
+
+```{r}
+dogs <- c("teddy", "khora", "waffle", "banjo", "tallie", "chessie")
+
+# Check class of dogs (we'd usually just do this in the Console)
+
+#typeof(dogs)
+#class(dogs)
+```
+
+```{r}
+my_breakfast <- c("waffles", 2, TRUE, "coffee")
+
+#typeof(my_breakfast)
+#class(my_breakfast)
+
+# a vector can only have 1 type of data
+```
+
+```{r}
+weights <- c(50, 60, 25, 35, 55, 35)
+
+typeof(weights)
+class(weights)
+# actual values stored w 64-bit storage for each of the values -- default to doubles (values that can have decimals)
+```
+
+```{r}
+weights_integer <- c(50L, 60L, 25L, 35L, 55L, 35L)
+
+typeof(weights_integer)
+class(weights_integer)
+```
+
+### Ask questions
+
+in console --\> ?is , lots of ?is. functions
+
+```{r}
+is.numeric(weights_integer)
+```
+
+Change class of a variable
+
+ex. want to have numbers (like zipcodes) treated as categorical value rather than numeric
+
+```{r}
+zipcodes <- c(93105, 93514, 93101, 93401)
+
+typeof(zipcodes)
+class(zipcodes)
+```
+
+use "as." family of functions
+
+"recast variable *as* this thing"
+
+```{r}
+zipcodes_chr <- as.character(zipcodes)
+ 
+# check outcomes --> now stored as strings
+# zipcodes_chr
+```
+
+Takeaway:
+
+-   Use as. family of functions to recast data classes
+
+-   Use is. family of functions to ASK what class something is
+
+    -   sidenote: use ctrl + shift + C to comment out larger selections of code
+
+```{r}
+
 ```
