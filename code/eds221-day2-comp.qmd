@@ -320,3 +320,5 @@ purrr::pluck(starwars, "starships", 1, 2)
 ```
 
 \$ is also called an accessor operator
+
+## 
