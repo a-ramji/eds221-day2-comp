@@ -315,6 +315,8 @@ starwars$starships[[1]][2]
 ```
 
 ```{r}
-# dataframe, column name, 1st element (a vector), 2nd element from that vector
+# dataframe, column name (vector of values), 1st element (a vector), 2nd element from that vector
 purrr::pluck(starwars, "starships", 1, 2)
 ```
+
+\$ is also called an accessor operator
