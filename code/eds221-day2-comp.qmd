@@ -91,6 +91,47 @@ Takeaway:
 
     -   sidenote: use ctrl + shift + C to comment out larger selections of code
 
-```{r}
+### Create a vector with named elements
 
+```{r}
+dog_food <- c(teddy = "purina", khora = "alpo", waffle = "fancy feast", banjo = "blue diamond", tallie = "farmer's dog", chessie = "stella's stew")
+
+# typeof(dog_food)
+# class(dog_food)
+
+#dog_food
+```
+
+```{r}
+test <- c(cat = 4, dog = 10, elephant = 11)
+class(test)
+```
+
+example: accessing the 2nd element in a vector
+
+```{r}
+dog_food[2]
+# R uses a 1-index, meaning that the first element of a vector is 1
+# Python and JavaScript use 0-indexing (starts at 0)
+```
+
+usually you don't have names for each different element that's in a vector
+
+if you do, you can access individual named values:
+
+```{r}
+dog_food["khora"]
+```
+
+Access ranges of values in a vector
+
+Use : to refer to a range (low : high)
+
+```{r}
+trees <- c("ponderosa", "lodgepole", "jeffrey", "sugar", "white", "bristlecone")
+# class(trees)
+
+trees[3]
+
+trees[3:5]
 ```
