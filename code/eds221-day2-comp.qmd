@@ -135,3 +135,32 @@ trees[3]
 
 trees[3:5]
 ```
+
+### Warm-up for **for loops**
+
+-   use the index of things to help us iterate through different vectors
+
+using trees ...
+
+```{r}
+i <- 3
+trees[i]
+```
+
+i in our current session has a value of 3.
+
+if we recreate this in the chunk below, that single variable will be redefined (overwritten) with the most recent version or definition (we can check in environment tab)
+
+```{r}
+i <- seq(1:3) # same thing as seq(from = 1, to = 3)
+# nothing special about using i for our index here
+yoda <- 4
+trees[i]
+trees[yoda]
+```
+
+```{r}
+y = 6i
+class(y)
+# this is the other way that i shows up by default in R , kind of like how L sets numbers as integers but you could also have a variable called L
+```
