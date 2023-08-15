@@ -195,3 +195,128 @@ fish_size[ , 2]
 ```
 
 ## An Edit!
+
+## Lists
+
+```{r}
+urchins <- list("blue", c(1, 2, 3), c("lunch", "dinner", "dessert"), 5L)
+# urchins
+# class(urchins)
+```
+
+Indexing
+
+using single brackets returns that element but maintains the original data structure
+
+```{r}
+# using single brackets returns that element but maintains the original data structure 
+urchins_list <- urchins[2]
+# class is list
+```
+
+vs. using double brackets, which returns a vector
+
+```{r}
+urchins_vector <- urchins[[2]]
+# class is numeric
+```
+
+```{r}
+urchins_named <- list(color = "blue", values = c(1, 2, 3), meal = c("lunch", "dinner", "dessert"), cost = 5L)
+
+# naming our values allows us to call them later on... 
+# naming is just assigning this attribute to these values 
+```
+
+```{r}
+urchins_named$color
+```
+
+example:
+
+t-test
+
+```{r}
+sample1 <- c(1, 2, 3, 4, 5, 3, 2, 4, 1)
+sample2 <- c(3, 4, 1, 6, 7, 4, 8, 6, 10, 11)
+
+ttest_example <- t.test(sample1, sample2)
+
+# can call ttest_example in console
+```
+
+p-value says, if the null hypothesis was true -- drawn from pops w the same mean value -- there's a 1.15% chance that they would have sample means at least that different ... ?
+
+possible, but not super likely that they were drawn from populations with the same mean
+
+```{r}
+ttest_example$p.value
+```
+
+```{r}
+class(ttest_example)
+```
+
+example:
+
+Mean size for trees in Site A is greater than the mean size in Site B (... my statistical summary, `r ttest_example$p.value` ).
+
+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+
+## Data frames
+
+-   can have different data types, but vectors must be the same length
+
+```{r}
+fruit <- data.frame(type = c("apple", "banana", "peach"), 
+                    mass = c(130, 195, 150))
+class(fruit)
+
+fruit
+```
+
+-   indexing \[row, column\]
+
+```{r}
+
+fruit[3, 2]
+```
+
+-   pluck function from purrr package within tidyverse
+
+```{r}
+# looks in this data frame, this column, and this element
+purrr::pluck(fruit, "type", 2)
+```
+
+base R
+
+```{r}
+fruit$type[2]
+```
+
+starwars dataframe
+
+-   starships
+
+```{r}
+# gets the entire column
+# starwars$starships
+
+# gets first element from that column
+starwars$starships[1]
+
+# double brackets returns the actual values
+# gets a vector of the values in the first row
+starwars$starships[[1]]
+
+# gets the second value within that vector 
+starwars$starships[[1]][2]
+```
+
+```{r}
+# dataframe, column name (vector of values), 1st element (a vector), 2nd element from that vector
+purrr::pluck(starwars, "starships", 1, 2)
+```
+
+\$ is also called an accessor operator
